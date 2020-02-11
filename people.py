@@ -12,8 +12,11 @@ class Customer(People):
         if address is None:
             address = []
         self.address = address
-        self.payment_details = {}
+        self.__payment_details = {}
 
     def add_payment_details(self, address, card_no):
-        self.payment_details['address'] = address
-        self.payment_details['card_no'] = card_no
+        self.__payment_details['address'] = address
+        self.__payment_details['card_no'] = card_no
+
+    def send_payment_details(self):
+        return self.__payment_details
