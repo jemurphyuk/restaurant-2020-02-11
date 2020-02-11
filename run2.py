@@ -11,7 +11,7 @@ from general_functions import *
     # as user I can create orders
     # as user I can add items to order
     # as user I can see the total of an order
-help = '    Please type EXIT to leave the terminal \n    Please type "1" to input customer \n    Please type "2" to input a menu item \n    Please type "2.1" to remove a menu item \n    Please type "3" to start an order \n    Please type HELP for this help again'
+help = '    Please type EXIT to leave the terminal \n    Please type "1" to input customer \n    Please type "2.1" to input a menu item \n    Please type "2.2" to remove a menu item \n    Please type "3" to start an order \n    Please type HELP for this help again'
 print(help)
 
 while True:
@@ -24,9 +24,9 @@ while True:
         print(help)
     elif user_input == '1':
         print("You've added a customer")
-    elif user_input == '2':
-        print("You've added a menu item")
     elif user_input == '2.1':
+        print("You've added a menu item")
+    elif user_input == '2.2':
         secondary_input = input('Which menu item do you wish to remove? \n(Type "N" to return to the options screen):   ')
         if secondary_input.upper() == 'N':
             pass
@@ -42,6 +42,6 @@ while True:
             input("What food items are you adding to your order: ")
 
     else:
-        print('Unknown command, please try again')
+        print('Unknown command, please enter code again')
 # evaluate and go to each option
         # inside each option, do logic, and create what ever you need to create
