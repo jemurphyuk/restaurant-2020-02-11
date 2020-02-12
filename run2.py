@@ -34,14 +34,28 @@ while True:
             print('You have removed {Jason} from the')
             pass
     elif user_input == '3':
+        customer_input = input("Customer Name:    ")
+        current_order = Order(customer=customer_input)
         print("You've created a new order")
         print("Menu:")
         for i in FoodItems.food_items_list:
             print(f"{(vars(i)['item']).capitalize()}: {set_two_dp_price(vars(i)['price'])}")
         while True:
-            input("What food items are you adding to your order: ")
+            user_input3 = input("What food items are you adding to your order: ")
+            if user_input3 == 'seabass':
+                Order.add_item_to_order(current_order, seabass)
+            elif user_input3 == 'finish':
+                print("Your final order cost is:")
+                print("£" + str(current_order.order_calculator))
+                break
+            elif user_input3 == 'pop':
+                Order.remove_last(current_order)
+            else:
+                pass
 
     else:
         print('Unknown command, please enter code again')
 # evaluate and go to each option
         # inside each option, do logic, and create what ever you need to create
+
+print(FoodItems.get_food_items_dict())

@@ -1,4 +1,4 @@
-
+from general_functions import *
 class Order:
     __order_integer = 1000
     order_list = []
@@ -10,8 +10,14 @@ class Order:
         self.items = []
         self.status = 'Open'
 
-    def add_items_order(self, item):
+    def add_multiple_to_order(self, item):
         self.items.extend(item)
+
+    def add_item_to_order(self, item):
+        self.items.append(item)
+
+    def remove_last_item(self):
+        self.items.pop()
 
 
     def order_calculator(self):
@@ -19,5 +25,5 @@ class Order:
         for item in range(0, len(self.items)):
             price = self.items[item].price
             order_total = order_total + price
-            price_order_total = "{0:.2f}".format(order_total)
+            return (set_two_dp_price(order_total))
     # def calculate_total(self):

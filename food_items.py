@@ -14,7 +14,12 @@ class FoodItems:
     def __add_food_item_to_list(cls, food):
         cls.food_items_list.append(food)
 
-
+    @classmethod
+    def get_food_items_dict(cls):
+        for i in range(0, len(FoodItems.food_items_list)):
+            food_data = (cls.food_items_list[i])
+            print(vars(food_data))
+        return
 
 class Side(FoodItems):
     pass
